@@ -65,8 +65,8 @@ body {
 }
 
 .container {
-  max-width: 1220px;
-  padding: 0 10px;
+  max-width: 1230px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -137,8 +137,8 @@ body {
   display: flex;
 }
 
-.menu__item:not(:last-child) {
-  margin-right: 32px;
+.menu__item+.menu__item {
+  margin-left: 32px;
 }
 
 .menu__link {
@@ -498,7 +498,7 @@ body {
 }
 
 .footer__container {
-  padding: 120px 10px;
+  padding: 120px 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -602,8 +602,14 @@ body {
 
 @media(max-width:768px) {
 
+
+  .header__inner {
+    flex-wrap: wrap;
+  }
+
   .hero__inner {
     flex-direction: column-reverse;
+    text-align: center;
   }
 
   .hero__content {
@@ -640,9 +646,13 @@ body {
     padding: 70px 0;
   }
 
+  .about {
+    text-align: center;
+  }
+
   .about__inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .about__img {
@@ -653,6 +663,14 @@ body {
 
   .about__content {
     width: 100%;
+  }
+
+  .benefits__wrapper {
+    text-align: center;
+  }
+
+  .benefits__inner {
+    align-items: center;
   }
 
   .benefits__content {
@@ -698,9 +716,10 @@ body {
   }
 
   .footer__container {
-    padding: 60px 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     flex-wrap: nowrap;
-    flex-direction: column  ;
+    flex-direction: column;
   }
 
 
@@ -708,11 +727,8 @@ body {
   .footer__brand,
   .footer__links-wrapper {
     flex-basis: 100%;
-    /* Элементы теперь будут занимать 100% ширины */
     max-width: 100%;
-    /* Убираем ограничение по максимальной ширине */
     margin-bottom: 30px;
-    /* Добавляем отступ снизу между элементами */
   }
 
   .footer__links-wrapper {
@@ -724,11 +740,21 @@ body {
   }
 
   .footer__social-link+.footer__social-link {
-    margin-left: 16px; // уменьшаем отступ между иконками социальных сетей
+    margin-left: 16px;
+  }
+}
+
+@media (max-width:605px) {
+  .header__link {
+    margin-top: 15px;
   }
 }
 
 @media (max-width: 580px) {
+
+  .title {
+    font-size: 26px;
+  }
 
   .header {
     padding: 18px 0;
@@ -736,6 +762,7 @@ body {
 
   .header__inner {
     flex-wrap: wrap;
+    row-gap: 15px;
   }
 
   .logo__img {
@@ -755,7 +782,7 @@ body {
   }
 
   .hero__title {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .link {
@@ -776,29 +803,31 @@ body {
     flex-direction: column-reverse;
   }
 
-  .footer__container {
-    /* На мобильных устройствах вы можете здесь добавить flex-direction: column;,
-       чтобы элементы располагались друг под другом */
+  .room__content {
     flex-direction: column;
-    padding: 40px 20px;
-    /* Уменьшаем внешние отступы */
+    display: flex;
+    align-items: center;
+  }
+
+  .steps__title {
+    font-size: 20px;
   }
 
   .footer__container {
-    padding: 40px 15px; // еще меньше паддинг
+    flex-direction: column;
+    padding: 40px 20px;
   }
 
   .footer__text {
-    max-width: none; // позволяем тексту занимать доступное пространство
-    margin-bottom: 20px; // уменьшаем отступ снизу
+    max-width: none;
+    margin-bottom: 20px;
   }
 
   .footer__links {
-    margin-bottom: 30px; // добавляем отступ между блоками ссылок
+    margin-bottom: 30px;
   }
 
   .footer__item+.footer__item {
-    margin-top: 16px; // уменьшаем отступ между пунктами списка
+    margin-top: 16px;
   }
 }
-
